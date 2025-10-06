@@ -1,24 +1,12 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import LoginPage from './pages/Login';
-import HomePage from './pages/Home';
-import { ProtectedRoute } from './components/molecules/ProtectedRoute';
+import { useState } from 'react'
+import './App.css'
 
-const App: React.FC = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path='/login' element={<LoginPage />} />
-      <Route
-        path='/'
-        element={
-          <ProtectedRoute>
-            <HomePage />
-          </ProtectedRoute>
-        }
-      />
-      <Route path='*' element={<Navigate to='/' replace />} />
-    </Routes>
-  </BrowserRouter>
-);
+function App() {
 
-export default App;
+  return (
+    <>
+    </>
+  )
+}
+
+export default App
