@@ -1,0 +1,47 @@
+@use "sass:color";
+@use "sass:list";
+
+:root {
+  $initial-color: #240053;
+  $final-color: #070011;
+
+  $steps: 20;
+
+  $colors: ();
+
+  @for $i from 0 through $steps {
+    $weight: calc(100% / $steps) * $i;
+    $tone: color.mix($initial-color, $final-color, 100% - $weight);
+    $colors: list.append($colors, $tone, $separator: comma)
+  }
+
+  $rx: 110%;
+  $ry: 120%;
+
+  $n: list.length($colors);
+
+  $gradient: ();
+
+  @for $i from 1 through $n {
+    $c: list.nth($colors, $i);
+    $pos1: (calc(100% / $n) * ($i - 1));
+    $pos2: (calc(100% / $n) * $i);
+
+    $gradient: list.append($gradient, #{$c} #{$pos1}, $separator: comma);
+
+    $gradient: list.append($gradient, #{color.scale($c, $blackness: 7%)} #{$pos2}, $separator: comma);
+  }
+
+  background:radial-gradient(
+    ellipse #{$rx} #{$ry} at center,
+    $gradient...
+  );
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+}

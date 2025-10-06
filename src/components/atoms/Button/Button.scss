@@ -1,0 +1,41 @@
+@use "sass:color";
+@use '../../../styles/globals';
+
+$primary-disable-btn-color: #9869ac;
+$second-disable-tn-color: #45385C;
+$active-btn-color: #FFFFFF;
+$planning-active-btn-color: #6429CD;
+
+.custom-button{
+    padding: 10px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: globals.$font-primary;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+
+    &:disabled,
+    &--disabled{
+        opacity: 0.4;
+        cursor: not-allowed !important;
+        transform: none !important;
+    }
+
+    &--primary {
+        background-color: $primary-disable-btn-color;
+    }
+
+    &--second {
+        background-color: $second-disable-tn-color;
+    }
+
+    &--planning {
+        background-color: $planning-active-btn-color;
+    }
+}
