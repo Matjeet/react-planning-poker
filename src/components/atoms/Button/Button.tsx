@@ -1,14 +1,20 @@
-import React from 'react';
+import './Button.scss'
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
+interface Params {
+    label: string;
+    type?: 'primary' | 'second' | 'planning';
+    disabled?: boolean;
+    parentMethod?: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, ...props }) => (
-  <button
-    className='w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded transition-colors duration-150 disabled:opacity-50'
-    {...props}
-  >
-    {children}
-  </button>
-);
+export const Button = ({ label, type = 'primary', disabled = false, parentMethod }: Params) => {
+    return (
+        <button 
+            className={`custom-button custom-button--${type} ${disabled ? 'custom-button--disabled' : ''}`}
+            disabled={disabled}
+            onClick={disabled ? undefined : parentMethod}
+        >
+            {label}
+        </button>
+    );
+}
