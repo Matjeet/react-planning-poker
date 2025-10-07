@@ -1,20 +1,52 @@
-import React from 'react';
+import type { ChangeEvent } from 'react'
+import './Input.scss'
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string;
-  error?: string;
+interface Params {
+  type?: 'text'
+  placeholder?: string
+  value?: string
+  disable?: boolean
+  error?: boolean
+  success?: boolean
+  onChange?: (value: string) => void
+  className?: string
 }
 
-export const Input: React.FC<InputProps> = ({ label, error, ...props }) => (
-  <div className='mb-4'>
-    <label className='block text-sm font-medium text-gray-700 mb-1'>
-      {label}
-    </label>
-    <input
-      className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 ${error ? 'border-red-500' : 'border-gray-300'}`}
+export const Input = ({
+  type = 'text',
+  placeholder = '',
+  value = '',
+  disable = false,
+  error = false,
+  success = false,
+  onChange,
+  className = ''
+}: Params) => {
 
-      {...props}
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (onChange && !disable) {
+      onChange(event.target.value)
+    }
+  }
+
+  const getInputClasses = () => {
+    const classes = ['custom-input']
+
+    if (error) classes.push('custom-input--error')
+    if (success) classes.push('custom-input--success')
+    if (className) classes.push(className)
+
+    return classes.join(' ')
+  }
+
+  return(
+    <input
+      type={type}
+      className={getInputClasses()}
+      placeholder={placeholder}
+      value={value}
+      disabled={disable}
+      onChange={handleChange}
     />
-    {error && <span className='text-xs text-red-600'>{error}</span>}
-  </div>
-);
+  )
+}
