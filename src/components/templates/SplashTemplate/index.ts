@@ -1,0 +1,1 @@
+export { SplashTemplate } from './SplashTemplate'
