@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
-import { SplashPage } from "./pages/SplashPage/SplashPage"
+import { SplashPage } from "./pages/SplashPage"
+import { InitialPage } from "./pages/InitialPage"
 
 function App() {
 
@@ -19,9 +20,13 @@ function App() {
             isLoading ? (
               <SplashPage onLoadingComplete={handleLoadingComplete} />
             ) : (
-              <Navigate to="/" replace />
+              <Navigate to="/start-menu" replace />
             )
           } 
+        />
+        <Route 
+          path="/start-menu" 
+          element={<InitialPage />}
         />
       </Routes>
     </Router>
