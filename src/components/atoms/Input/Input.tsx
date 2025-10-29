@@ -10,6 +10,9 @@ interface Params {
   success?: boolean
   onChange?: (value: string) => void
   className?: string
+  label?: string
+  id?: string
+  required?: boolean
 }
 
 export const Input = ({
@@ -20,8 +23,13 @@ export const Input = ({
   error = false,
   success = false,
   onChange,
-  className = ''
+  className = '',
+  label = '',
+  id = '',
+  required = false
 }: Params) => {
+
+  const inputId = id || `input-${Math.random().toString(36).substring(2, 9)}`
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (onChange && !disable) {
@@ -40,13 +48,22 @@ export const Input = ({
   }
 
   return(
-    <input
-      type={type}
-      className={getInputClasses()}
-      placeholder={placeholder}
-      value={value}
-      disabled={disable}
-      onChange={handleChange}
-    />
+    <div className="input-wrapper">
+      {label && (
+        <label htmlFor={inputId} className="input-label">
+          {label}
+          {required && <span className="input-required">*</span>}
+        </label>
+      )}
+
+      <input
+        type={type}
+        className={getInputClasses()}
+        placeholder={placeholder}
+        value={value}
+        disabled={disable}
+        onChange={handleChange}
+      />
+    </div>
   )
 }

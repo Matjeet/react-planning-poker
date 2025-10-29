@@ -1,11 +1,29 @@
 @use 'sass:color';
 @use '../../../styles/globals';
 
-$input-border-color: #9869ac;
+$input-border-color: #BB65FF;
 $input-text-color: #FFFFFF;
 $input-placeholder-color: #999999;
 $input-error-color: #e74d3cad;
 $input-success-color: #2ECC71;
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+
+.input-label {
+    font-family: globals.$font-primary;
+    font-size: 16px;
+    font-weight: 600;
+    color: $input-text-color;
+}
+
+.input-required {
+    color: $input-error-color;
+}
 
 .custom-input {
     width: 100%;
@@ -38,7 +56,7 @@ $input-success-color: #2ECC71;
 
     &--error {
         border-color: $input-error-color;
-
+        
         &:focus{
             outline: 1px solid transparent;
             border-color: $input-error-color;
@@ -70,7 +88,7 @@ $input-success-color: #2ECC71;
     }
 
     &--large {
-        padding: 16px 20px;
         font-size: 16px;
     }
+
 }
