@@ -1,7 +1,7 @@
 import { useEffect } from "react"
-import { SplashTemplate } from "../../components/templates/SplashTemplate"
-import { SplashContainer } from "../../components/organisms/SplashContainer"
-import { Logo } from "../../components/molecules/Logo"
+import { SplashTemplate } from "../components/templates/SplashTemplate"
+import { SplashContainer } from "../components/organisms/SplashContainer"
+import { Logo } from "../components/molecules/Logo"
 
 interface Params {
     onLoadingComplete?: () => void

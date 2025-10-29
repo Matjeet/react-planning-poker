@@ -1,0 +1,1 @@
+export { InitialHeader } from "./InitialHeader/InitialHeader"

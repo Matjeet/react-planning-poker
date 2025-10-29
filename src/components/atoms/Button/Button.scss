@@ -18,7 +18,10 @@ $planning-active-btn-color: #6429CD;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 40px;
+    width: auto;
+    min-width: 100px;
+    max-width: 170px;
+    margin: 0 auto;
 
     &:disabled,
     &--disabled{
@@ -28,7 +31,13 @@ $planning-active-btn-color: #6429CD;
     }
 
     &--primary {
-        background-color: $primary-disable-btn-color;
+        background-color: $active-btn-color;
+        color: #330072;
+        
+        &:disabled {
+            background-color: $primary-disable-btn-color;
+            color: #FFFFFF;
+        }
     }
 
     &--second {

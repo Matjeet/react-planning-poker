@@ -1,0 +1,18 @@
+@use '../../../../styles/globals';
+@use "../../../../styles/mixins";
+
+.initial-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    gap: 12px;
+    font-size: 12px;
+
+    &__title {
+        font-family: globals.$font-primary;
+        font-size: 20px;
+        font-weight: 600;
+        color: #FFFFFF;
+    }
+}
