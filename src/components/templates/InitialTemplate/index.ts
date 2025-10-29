@@ -1,0 +1,1 @@
+export { InitialTemplate } from './InitialTemplate'

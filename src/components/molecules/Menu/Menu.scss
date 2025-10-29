@@ -1,0 +1,44 @@
+@use "../../../styles/mixins";
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    min-height: 100vh;
+    padding: 16px 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    &--start {
+        min-height: 50vh;
+    }
+
+    &--user {
+        background-color: #1e1e1e;
+    }
+
+    @include mixins.respond-to(mini) {
+        gap: 15px;
+        min-width: 250px;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    @include mixins.respond-to(tablet) {
+        gap: 20px;
+        min-width: 300px;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    @include mixins.respond-to(desktop) {
+        gap: 30px;
+        min-width: 400px;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+}
