@@ -13,7 +13,7 @@ export const InitialPage = () => {
             return false
         }
 
-        const specialCharsRegex = /[_,.*#\/\-]/
+        const specialCharsRegex = /[_,.*#\\/\\-]/
         if (specialCharsRegex.test(name)) {
             return false
         }
