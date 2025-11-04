@@ -1,8 +1,7 @@
 @use 'sass:color';
 @use '../../../styles/globals';
+@use '../../../styles/variables' as vars;
 
-$input-border-color: #BB65FF;
-$input-text-color: #FFFFFF;
 $input-placeholder-color: #999999;
 $input-error-color: #e74d3cad;
 $input-success-color: #2ECC71;
@@ -18,7 +17,7 @@ $input-success-color: #2ECC71;
     font-family: globals.$font-primary;
     font-size: 16px;
     font-weight: 600;
-    color: $input-text-color;
+    color: vars.$input-text-color-default;
 }
 
 .input-required {
@@ -28,10 +27,10 @@ $input-success-color: #2ECC71;
 .custom-input {
     width: 100%;
     padding: 12px 16px;
-    border: 2px solid $input-border-color;
+    border: 2px solid vars.$input-border-color-default;
     background-color: transparent;
     border-radius: 30px;
-    color: $input-text-color;
+    color: vars.$input-text-color-default;
     font-family: globals.$font-primary;
     font-size: 14px;
     font-weight: 400;
@@ -46,11 +45,11 @@ $input-success-color: #2ECC71;
 
     &:focus {
         outline: 1px solid transparent;
-        border-color: $input-border-color;
+        border-color: vars.$input-border-color-default;
         box-shadow: 
-            0 0 5px $input-border-color,
-            0 0 10px color.change($input-border-color, $alpha: 0.3),
-            0 0 15px color.change($input-border-color, $alpha: 0.1);
+            0 0 5px vars.$input-border-color-default,
+            0 0 10px color.change(vars.$input-border-color-default, $alpha: 0.3),
+            0 0 15px color.change(vars.$input-border-color-default, $alpha: 0.1);
         transform: scale(1.02);
     }
 
