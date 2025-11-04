@@ -1,0 +1,90 @@
+@use 'sass:color';
+@use "../../../styles/mixins";
+@use '../../../styles/variables' as vars;
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.player-role-modal {
+    background: #240053;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 550px;
+    border: 1px solid vars.$input-border-color-default;
+    box-shadow: 
+    0 0 5px vars.$input-border-color-default,
+    0 0 10px color.change(vars.$input-border-color-default, $alpha: 0.3),
+    0 0 15px color.change(vars.$input-border-color-default, $alpha: 0.1);
+    animation: modalSlideIn 0.3s ease;
+    overflow: hidden;
+    padding: 40px 50px 15px;
+
+    &__contenet {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    &__radio-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        padding-top: 12px;
+        gap: 35px;
+    }
+
+    &__footer {
+        padding: 40px 24px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @include mixins.respond-to(tablet) {
+        padding: 40px 70px 17px;
+    }
+    
+    @include mixins.respond-to(desktop) {
+        padding: 70px 100px 20px;
+    }
+
+    @include mixins.respond-to(large) {
+        padding: 70px 100px 20px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

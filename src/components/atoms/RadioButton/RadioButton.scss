@@ -1,0 +1,62 @@
+@use '../../../styles/globals';
+@use '../../../styles/variables' as vars;
+
+.radio-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px 0;
+
+    &__input {
+        display: none;
+    }
+
+    &__checkmark {
+        width: 20px;
+        height: 20px;
+        border: 2px solid vars.$input-border-color-default;
+        border-radius: 50%;
+        position: relative;
+        transition: all 0.2s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: vars.$input-border-color-default;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+    }
+
+    &__input:checked + &__checkmark::after {
+        opacity: 1;
+    }
+
+    &__input:checked + &__checkmark {
+        border-color: vars.$input-border-color-default;
+        background-color: rgba(152, 105, 172, 0.1);
+    }
+
+    &__label {
+        font-family: globals.$font-primary;
+        font-size: 14px;
+        color: vars.$input-text-color-default;
+        font-weight: 400;
+    }
+
+    &:hover &__checkmark {
+        border-color: vars.$input-border-color-default;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
