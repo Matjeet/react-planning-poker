@@ -2,7 +2,7 @@
 @use '../../../styles/globals';
 
 $primary-disable-btn-color: #9869ac;
-$second-disable-tn-color: #45385C;
+$second-disable-tn-color: #594875;
 $active-btn-color: #FFFFFF;
 $planning-active-btn-color: #6429CD;
 
@@ -41,7 +41,13 @@ $planning-active-btn-color: #6429CD;
     }
 
     &--second {
-        background-color: $second-disable-tn-color;
+        background-color: $active-btn-color;
+        color: #330072;
+
+        &:disabled {
+            background-color: $second-disable-tn-color;
+            color: #FFFFFF;
+        }
     }
 
     &--planning {

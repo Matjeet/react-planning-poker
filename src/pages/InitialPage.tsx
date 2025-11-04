@@ -2,7 +2,6 @@ import { useCallback, useState } from "react"
 import { Menu } from "../components/molecules/Menu"
 import { InitialContainer } from "../components/organisms/InitialLayoutContainer"
 import { InitialTemplate } from "../components/templates/InitialTemplate"
-import { AdminModal } from "../components/organisms/AdminModal"
 import { InputValidation } from "../util/Validation"
 
 export const InitialPage = () => {
@@ -38,8 +37,6 @@ export const InitialPage = () => {
                     inputValue={partyName}
                     isError={errors}
                 />
-
-                <AdminModal isOpen={true} onClose={() => {}} onRoleSelected={() => {}} />
             </InitialContainer>
         </InitialTemplate>
     )
