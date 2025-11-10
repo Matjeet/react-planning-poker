@@ -52,5 +52,13 @@ $planning-active-btn-color: #6429CD;
 
     &--planning {
         background-color: $planning-active-btn-color;
+        max-width: 180px;
+    }
+
+    &--share {
+        background-color: transparent;
+        border: 2px solid #FFFFFF;
+        color: #FFFFFF;
+        max-width: 250px;
     }
 }

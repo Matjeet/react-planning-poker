@@ -2,7 +2,7 @@ import './Button.scss'
 
 interface Params {
     label: string;
-    type?: 'primary' | 'second' | 'planning';
+    type?: 'primary' | 'second' | 'planning' | 'share';
     disabled?: boolean;
     parentMethod?: () => void;
 }
