@@ -1,0 +1,90 @@
+@use 'sass:color';
+@use "../../../styles/mixins";
+@use '../../../styles/variables' as vars;
+
+.planning-table {
+    box-shadow: 0 0 2em #330b6b;
+    border-radius: 50% / 30%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &--small {
+        background-color: #22044d;
+        border: 1px solid #6429CD;
+        width: 150px;
+        height: 280px;
+    }
+
+    &--medium {
+        background-color: transparent;
+        border: 2px solid #9479E8;
+        width: 170px;
+        height: 300px;
+    }
+
+    &--large {
+        background-color: transparent;
+        border: 2px solid #7444D6;
+        width: 200px;
+        height: 330px;
+    }
+
+    @include mixins.respond-to(tablet) {
+        border-radius: 30% / 50%;
+
+        &--small {
+            width: 450px;
+            height: 260px;
+        }
+
+        &--medium {
+            width: 480px;
+            height: 280px;
+        }
+
+        &--large {
+            width: 510px;
+            height: 310px;
+        }
+    }
+
+    @include mixins.respond-to(desktop) {
+        border-radius: 30% / 50%;
+
+        &--small {
+            width: 650px;
+            height: 350px;
+        }
+
+        &--medium {
+            width: 690px;
+            height: 390px;
+        }
+
+        &--large {
+            width: 750px;
+            height: 450px;
+        }
+    }
+
+        @include mixins.respond-to(large) {
+        border-radius: 30% / 50%;
+
+        &--small {
+            width: 650px;
+            height: 350px;
+        }
+
+        &--medium {
+            width: 690px;
+            height: 390px;
+        }
+
+        &--large {
+            width: 750px;
+            height: 450px;
+        }
+    }
+}

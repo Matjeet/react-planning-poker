@@ -3,11 +3,13 @@ import { Menu } from "../components/molecules/Menu"
 import { InitialContainer } from "../components/organisms/InitialLayoutContainer"
 import { InitialTemplate } from "../components/templates/InitialTemplate"
 import { InputValidation } from "../util/Validation"
+import { useNavigate } from "react-router-dom"
 
 export const InitialPage = () => {
     const [partyName, setPartyName] = useState('')
     const [isDisabled, setIsDisabled] = useState(true)
     const [errors, setErrors] = useState(false)
+    const navigate = useNavigate()
 
     const validatePartyName = useCallback((name: string) => {
         return InputValidation(name)
@@ -21,9 +23,9 @@ export const InitialPage = () => {
 
     const handleSubmit = useCallback(() => {
         if (!isDisabled) {
-            console.log("Creating party with name:", partyName)
+            navigate('/lobby', { state: { partyName } } )
         }
-    }, [partyName, isDisabled])
+    }, [partyName, isDisabled, navigate])
 
     return (
         <InitialTemplate>

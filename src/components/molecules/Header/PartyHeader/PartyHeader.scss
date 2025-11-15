@@ -1,0 +1,26 @@
+.party-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.label-party {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 50%;
+}
+
+.share-party {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-right: 15px;
+    gap: 10px;
+}
