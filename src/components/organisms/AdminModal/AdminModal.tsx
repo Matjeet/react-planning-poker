@@ -4,33 +4,38 @@ import { Button } from "../../atoms/Button";
 import { useCallback, useState } from "react";
 import "./AdminModal.scss"
 import { InputValidation } from "../../../util/Validation";
+import { useNavigate } from "react-router-dom";
 
 interface Params {
     isOpen: boolean
-    onClose: () => void
-    onRoleSelected: (data: {
-        username: string;
-        role: 'player' | 'spectator';
-    }) => void
+    partyName: string
 }
 
 export const AdminModal = ({
     isOpen,
-    onClose,
-    onRoleSelected
+    partyName
 }: Params) => {
     const [username, setUsername] = useState('')
     const [role, setRole] = useState<'player' | 'spectator'>('player')
     const [isDisabled, setIsDisabled] = useState(true)
     const [error, setError] = useState(false)
+    const navigate = useNavigate()
 
     const handleConfirm = () => {
         if (username.trim() && role) {
-            onRoleSelected({ 
-                username: username.trim(), 
-                role 
-            })
-            onClose()
+
+            const userData = {
+                userName: username.trim(),
+                role,
+                partyName
+            }
+
+            if(role === 'player') {
+                navigate('/game-room', { state: userData })
+            }
+            else {
+                navigate('/spectator-room', { state: userData })
+            }
         }
     }
 

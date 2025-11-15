@@ -2,6 +2,9 @@ import { useState } from "react"
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import { SplashPage } from "./pages/SplashPage"
 import { InitialPage } from "./pages/InitialPage"
+import { LobbyPage } from "./pages/LobbyPage"
+import { GamePage } from "./pages/GamePage"
+import { SpectatorPage } from "./pages/SpectatorPage"
 
 function App() {
 
@@ -27,6 +30,18 @@ function App() {
         <Route 
           path="/start-menu" 
           element={<InitialPage />}
+        />
+        <Route
+          path="/lobby"
+          element={<LobbyPage />} 
+        />
+        <Route
+          path="/game-room"
+          element={<GamePage />} 
+        />
+        <Route
+          path="/spectator-room"
+          element={<SpectatorPage />}
         />
       </Routes>
     </Router>
