@@ -1,0 +1,17 @@
+.party-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 600;
+
+
+
+    &__cards {
+        display: flex;
+        flex-direction: row;
+    }
+
+}
