@@ -42,7 +42,6 @@ export const NestedPlanningTable = ({
                             key={p.id}
                             className={`player-position player-position--${i}`}
                         >
-                            <p>{i}</p>
                             <Avatar 
                                 text={p.name}
                             />

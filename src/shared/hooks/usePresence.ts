@@ -14,8 +14,8 @@ export type Player = {
 }
 
 const CHANNEL_NAME = 'planning-poker-presence-v1'
-const HEARTBEAT_INTERVAL = 2000 // ms
-const STALE_THRESHOLD = 5000 // ms
+const HEARTBEAT_INTERVAL = 200000 // ms
+const STALE_THRESHOLD = 500000 // ms
 
 function uid() {
   if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
