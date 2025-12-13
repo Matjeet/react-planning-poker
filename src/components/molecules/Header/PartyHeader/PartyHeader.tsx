@@ -15,7 +15,7 @@ export const PartyHeader = ({size = 'medium', avatarText='', havesAvatar=false}:
         <div className="party-container">
             <Icon src={PokerChip} size={size === 'medium' ? 48 : 70} />
             <div className="share-party">
-                {havesAvatar ? (<Avatar text={avatarText}/>) : (<></>)}
+                {havesAvatar ? (<Avatar text={avatarText} hasBottomLabel={false}/>) : (<></>)}
                 <Button type='share' label='Invitar jugadores'/>
             </div>
         </div>
