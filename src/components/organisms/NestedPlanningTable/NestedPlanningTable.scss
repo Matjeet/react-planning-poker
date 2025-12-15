@@ -1,6 +1,7 @@
 .planning-table-container {
     position: relative;
     max-width: 1200px;
+    max-height: 700px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
@@ -11,7 +12,6 @@
         "left3  .      .      .      right3"
         ".      bottom1 bottom2 bottom3 .";
     place-items: center;
-    gap: 10px;
 }
 
 // Contenedor de la mesa (ocupa el centro)
@@ -30,13 +30,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: pointer;
     transition: all 0.3s ease;
     z-index: 10;
-    
-    &:hover {
-        transform: scale(1.1);
-    }
     
     // Distribución usando grid-areas
     &--0 { grid-area: top1;}      // Arriba izquierda
