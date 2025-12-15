@@ -8,15 +8,16 @@ interface Params {
     size?: 'medium' | 'large'
     avatarText?: string
     havesAvatar?: boolean
+    handleOpenSharedModal?: () => void
 }
 
-export const PartyHeader = ({size = 'medium', avatarText='', havesAvatar=false}: Params) => {
+export const PartyHeader = ({size = 'medium', avatarText='', havesAvatar=false, handleOpenSharedModal}: Params) => {
     return (
         <div className="party-container">
             <Icon src={PokerChip} size={size === 'medium' ? 48 : 70} />
             <div className="share-party">
                 {havesAvatar ? (<Avatar text={avatarText} hasBottomLabel={false}/>) : (<></>)}
-                <Button type='share' label='Invitar jugadores'/>
+                <Button type='share' label='Invitar jugadores' parentMethod={handleOpenSharedModal}/>
             </div>
         </div>
     )
