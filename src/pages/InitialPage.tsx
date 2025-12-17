@@ -23,7 +23,8 @@ export const InitialPage = () => {
 
     const handleSubmit = useCallback(() => {
         if (!isDisabled) {
-            navigate('/lobby', { state: { partyName } } )
+            localStorage.setItem('partyName', partyName)
+            navigate('/lobby')
         }
     }, [partyName, isDisabled, navigate])
 

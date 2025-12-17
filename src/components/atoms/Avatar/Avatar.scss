@@ -7,6 +7,19 @@
     border-radius: 50%;
     object-fit: cover;
     background-color: #BDBDFF;
-    color: #330072;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #FFFFFF;
+    font-weight: 200;
+}
+
+.shortName {
+    font-weight: 800;
     font-size: 20px;
+    color: #330072;
 }
