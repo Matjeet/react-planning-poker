@@ -17,7 +17,9 @@ export const PartyHeader = ({size = 'medium', avatarText='', havesAvatar=false, 
             <Icon src={PokerChip} size={size === 'medium' ? 48 : 70} />
             <div className="share-party">
                 {havesAvatar ? (<Avatar text={avatarText} hasBottomLabel={false}/>) : (<></>)}
-                <Button type='share' label='Invitar jugadores' parentMethod={handleOpenSharedModal}/>
+                <div className="share-party-button">
+                    <Button type='share' label='Invitar jugadores' parentMethod={handleOpenSharedModal}/>
+                </div>
             </div>
         </div>
     )

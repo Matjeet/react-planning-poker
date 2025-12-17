@@ -12,6 +12,15 @@
         "left3  .      .      .      right3"
         ".      bottom1 bottom2 bottom3 .";
     place-items: center;
+
+    @media (max-width: 767px) {
+        grid-template-areas:
+            ".      left3   left2   left1   ."
+            "bottom3 .      .      .      top3"
+            "bottom2 .      center .      top2"
+            "bottom1 .      .      .      top1"
+            ".      right3   right2   right1 .";
+    }
 }
 
 // Contenedor de la mesa (ocupa el centro)
