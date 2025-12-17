@@ -37,6 +37,10 @@ export const Input = ({
     }
   }
 
+  if(className.includes('shared')) {
+    disable = true
+  }
+
   const getInputClasses = () => {
     const classes = ['custom-input']
 

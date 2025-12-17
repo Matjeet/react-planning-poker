@@ -1,0 +1,56 @@
+.planning-table-container {
+    position: relative;
+    max-width: 1200px;
+    max-height: 700px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+        ".      top1   top2   top3   ."
+        "left1  .      .      .      right1"
+        "left2  .      center .      right2"
+        "left3  .      .      .      right3"
+        ".      bottom1 bottom2 bottom3 .";
+    place-items: center;
+
+    @media (max-width: 767px) {
+        grid-template-areas:
+            ".      left3   left2   left1   ."
+            "bottom3 .      .      .      top3"
+            "bottom2 .      center .      top2"
+            "bottom1 .      .      .      top1"
+            ".      right3   right2   right1 .";
+    }
+}
+
+// Contenedor de la mesa (ocupa el centro)
+.table-stack {
+    grid-area: center;
+    grid-column: 2 / 5;
+    grid-row: 2 / 5;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Posiciones de los avatares usando grid-areas
+.player-position {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    
+    // Distribución usando grid-areas
+    &--0 { grid-area: top1;}      // Arriba izquierda
+    &--1 { grid-area: top2;}      // Arriba centro
+    &--2 { grid-area: top3;}      // Arriba derecha
+    
+    &--3 { grid-area: right2; }     // Derecha centro
+    &--4 { grid-area: bottom1; }   // Abajo izquierda
+    &--5 { grid-area: bottom2; }   // Abajo centro
+    &--6 { grid-area: bottom3; }   // Abajo derecha
+    &--7 { grid-area: left2; }      // Izquierda centro
+    
+}

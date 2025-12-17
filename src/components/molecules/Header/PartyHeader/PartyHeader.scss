@@ -24,3 +24,9 @@
     margin-right: 15px;
     gap: 10px;
 }
+
+.share-party-button {
+    @media (max-width: 767px) {
+        display: none;
+    }
+}

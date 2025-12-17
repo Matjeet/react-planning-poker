@@ -8,12 +8,10 @@ import { useNavigate } from "react-router-dom";
 
 interface Params {
     isOpen: boolean
-    partyName: string
 }
 
 export const AdminModal = ({
-    isOpen,
-    partyName
+    isOpen
 }: Params) => {
     const [username, setUsername] = useState('')
     const [role, setRole] = useState<'player' | 'spectator'>('player')
@@ -26,8 +24,7 @@ export const AdminModal = ({
 
             const userData = {
                 userName: username.trim(),
-                role,
-                partyName
+                role
             }
 
             if(role === 'player') {

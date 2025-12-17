@@ -1,0 +1,63 @@
+@use 'sass:color';
+@use "../../../styles/mixins";
+@use '../../../styles/variables' as vars;
+
+.share-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+    flex-direction: column;
+}
+
+.share-modal-header {
+    background: #6429CD;
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    max-width: 550px;
+    animation: modalSlideIn 0.3s ease;
+    overflow: hidden;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3 {
+        margin: 0;
+        color: white;
+    }
+}
+
+.share-modal-content {
+    background: #1a003f;
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+    max-width: 550px;
+    border: 1px solid #9610FF; 
+    animation: modalSlideIn 0.3s ease;
+    overflow: hidden;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.share-modal-close-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
